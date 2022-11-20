@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Rute ke Rumah Sakit PMI</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- <link rel="manifest" href="site.webmanifest"> -->
+  <link rel="shortcut icon" type="image/x-icon" href="../img/favicon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <!-- CSS here -->
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/owl.carousel.min.css">
+  <link rel="stylesheet" href="../css/magnific-popup.css">
+  <link rel="stylesheet" href="../css/font-awesome.min.css">
+  <link rel="stylesheet" href="../css/themify-icons.css">
+  <link rel="stylesheet" href="../css/nice-select.css">
+  <link rel="stylesheet" href="../css/flaticon.css">
+  <link rel="stylesheet" href="../css/gijgo.css">
+  <link rel="stylesheet" href="../css/animate.css">
+  <link rel="stylesheet" href="../css/slicknav.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+</head>
+
+<body>
+  <header>
+    <div class="header-area ">
+      <div id="sticky-header" class="main-header-area">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-xl-3 col-lg-2">
+              <div class="logo">
+                <a href="../index.html">
+                  <img src="../img/logo.png" alt="">
+                </a>
+              </div>
+            </div>
+            <div class="col-xl-5 col-lg-6">
+
+            </div>
+            <div class="col-xl-4 col-lg-4 d-none d-lg-block">
+              <div class="main-menu  d-none d-lg-block ">
+                <nav>
+                  <ul id="navigation">
+                    <li><a class="active" href="../index.html">home</a></li>
+                    <!-- <li><a href="Department.html">Department</a></li> -->
+                    <li><a href="Rumah Sakit Bogor.html">Lokasi Rumah Sakit <i class="ti-angle-down"></i></a>
+                      <ul class="submenu">
+                        <li><a href="Rute 1 - RSUD Kota Bogor.html">Rute RSUD Kota Bogor</a></li>
+                        <li><a href="Rute 2 - Rumah Sakit Vania.html">Rute Rumah Sakit Vania</a></li>
+                        <li><a href="Rute 3 - Rumah Sakit Ummi.html">Rute Rumah Sakit Ummi</a></li>
+                        <li><a href="Rute 4 - Rumah Sakit Salak.html">Rute Rumah Sakit Salak</a></li>
+                        <li><a href="Rute 5 - Rumah Sakit PMI.html">Rute Rumah Sakit PMI</a></li>
+                        <li><a href="Rute 6 - Rumah Sakit Mulia.html">Rute Rumah Sakit Mulia</a></li>
+                        <li><a href="Rute 7 - Rumah Sakit Bogor Medical Center.html">Rute Rumah Sakit BMC</a>
+                        </li>
+                        <li><a href="Rute 8 - Rumah Sakit Melania.html">Rute Rumah Sakit Melania</a></li>
+                        <li><a href="Rute 9 - Rumah Sakit Azra.html">Rute Rumah Sakit Azra</a></li>
+                        <li><a href="Rute 10 - Rumah Sakit Siloam.html">Rute Rumah Sakit Siloam</a></li>
+                      </ul>
+                    <li><a class="active" href="../index.html#tentang">Tentang</a></li>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="mobile_menu d-block d-lg-none"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div style="padding: 20px; background-color: #83c4ff;">
+    <div class="card">
+      <div class="card-header" style="padding-top: 15px!IMPORTANT; padding-bottom: 10px!IMPORTANT;">
+        <h3 class="text-center" style=" font-weight: 500;
+        font-size: 24px;">Rute Rumah Sakit PMI</h3>
+      </div>
+      <div class="card-body">
+        <div id="map" style="width: 100%; height: 700px; margin: auto ; z-index: 0; "></div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="copy-right_text" style="background-color: #fff;">
+      <div class="container">
+        <div class="footer_border"></div>
+        <div class="row">
+          <div class="col-xl-12">
+            <p class="copy_right text-center " style="color: #010101;">
+              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+              Copyright &copy;
+              <script>document.write(new Date().getFullYear());</script> All rights reserved </a>
+              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+
+  <script type="text/javascript">
+    const map = L.map('map').setView([-6.596553, 106.803562], 14);
+    googleStreets = L.tileLayer('http://{s}.google.com/vt?lyrs=m&x={x}&y={y}&z={z}', {
+      maxZoom: 20,
+      subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
+    });
+    googleStreets.addTo(map);
+
+    //Custom Marker
+    var IconRS1 = L.icon({ iconUrl: 'RS1.png', iconSize: [70, 70] });
+
+    //Rute
+    L.Routing.control({
+      waypoints: [
+        L.latLng(-6.589581484785318, 106.8057497418744),
+        L.latLng(-6.598660794575932, 106.80504809722622)
+      ]
+    }).addTo(map);
+
+    //Marker Rumah Sakit PMI
+    L.marker([-6.598660794575932, 106.80504809722622], { icon: IconRS1 }).addTo(map)
+      .bindPopup('<b>Rumah Sakit PMI</b> <br>Jenis: Rumah Sakit Umum <br>Alamat: Jl. Pajajaran No.80 <br>Jam Buka: 24 Jam <br>No.Telp: 02518393030 <br><br><b>Fasilitas:</b><br>1. Instalasi Tumbuh Kembang Anak<br>2. Instalasi Rawat Inap<br>3. Unit Perawatan Intensif<br>4. Instalasi Rawat Jalan<br>5. Instalasi Gawat Darurat (IGD)')
+
+    //Polygon Rumah Sakit PMI
+    var latlngs =
+      [[-6.598278066874897, 106.8047659592604],
+      [-6.5980483961811, 106.80598099991442],
+      [-6.597906684423294, 106.80600067668615],
+      [-6.597696560018121, 106.80708781832399],
+      [-6.598209654338951, 106.80725015169071],
+      [-6.59832693296622, 106.80690088899259],
+      [-6.598796047197632, 106.8069648385007],
+      [-6.59913322277702, 106.80491845424126]];
+    var polygon = L.polygon(latlngs, { color: 'green' }).addTo(map);
+
+
+  </script>
+</body>
+
+</html>

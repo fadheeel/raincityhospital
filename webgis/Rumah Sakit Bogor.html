@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Raincity Hospital</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- <link rel="manifest" href="site.webmanifest"> -->
+  <link rel="shortcut icon" type="image/x-icon" href="../img/favicon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <!-- CSS here -->
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/owl.carousel.min.css">
+  <link rel="stylesheet" href="../css/magnific-popup.css">
+  <link rel="stylesheet" href="../css/font-awesome.min.css">
+  <link rel="stylesheet" href="../css/themify-icons.css">
+  <link rel="stylesheet" href="../css/nice-select.css">
+  <link rel="stylesheet" href="../css/flaticon.css">
+  <link rel="stylesheet" href="../css/gijgo.css">
+  <link rel="stylesheet" href="../css/animate.css">
+  <link rel="stylesheet" href="../css/slicknav.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+    integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+    integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+</head>
+
+<body>
+  <header>
+    <div class="header-area ">
+      <div id="sticky-header" class="main-header-area">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-xl-3 col-lg-2">
+              <div class="logo">
+                <a href="../index.html">
+                  <img src="../img/logo.png" alt="">
+                </a>
+              </div>
+            </div>
+            <div class="col-xl-5 col-lg-6">
+
+            </div>
+            <div class="col-xl-4 col-lg-4 d-none d-lg-block">
+              <div class="main-menu  d-none d-lg-block ">
+                <nav>
+                  <ul id="navigation">
+                    <li><a class="active" href="../index.html">home</a></li>
+                    <!-- <li><a href="Department.html">Department</a></li> -->
+                    <li><a href="Rumah Sakit Bogor.html">Lokasi Rumah Sakit <i class="ti-angle-down"></i></a>
+                      <ul class="submenu">
+                        <li><a href="Rute 1 - RSUD Kota Bogor.html">Rute RSUD Kota Bogor</a></li>
+                        <li><a href="Rute 2 - Rumah Sakit Vania.html">Rute Rumah Sakit Vania</a></li>
+                        <li><a href="Rute 3 - Rumah Sakit Ummi.html">Rute Rumah Sakit Ummi</a></li>
+                        <li><a href="Rute 4 - Rumah Sakit Salak.html">Rute Rumah Sakit Salak</a></li>
+                        <li><a href="Rute 5 - Rumah Sakit PMI.html">Rute Rumah Sakit PMI</a></li>
+                        <li><a href="Rute 6 - Rumah Sakit Mulia.html">Rute Rumah Sakit Mulia</a></li>
+                        <li><a href="Rute 7 - Rumah Sakit Bogor Medical Center.html">Rute Rumah Sakit BMC</a>
+                        </li>
+                        <li><a href="Rute 8 - Rumah Sakit Melania.html">Rute Rumah Sakit Melania</a></li>
+                        <li><a href="Rute 9 - Rumah Sakit Azra.html">Rute Rumah Sakit Azra</a></li>
+                        <li><a href="Rute 10 - Rumah Sakit Siloam.html">Rute Rumah Sakit Siloam</a></li>
+                      </ul>
+                    <li><a class="active" href="../index.html#tentang">Tentang</a></li>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="mobile_menu d-block d-lg-none"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div style="padding: 20px; background-color: #83c4ff;">
+    <div class="card">
+      <div class="card-header" style="padding-top: 15px!IMPORTANT; padding-bottom: 10px!IMPORTANT;">
+        <h3 class="text-center" style=" font-weight: 500;
+        font-size: 24px;">Lokasi Rumah Sakit</h3>
+      </div>
+      <div class="card-body">
+        <div id="map" style="width: 100%; height: 700px; margin: auto ; z-index: 0; "></div>
+      </div>
+    </div>
+  </div>
+  
+  <footer class="footer">
+    <div class="copy-right_text" style="background-color: #fff;">
+      <div class="container">
+        <div class="footer_border"></div>
+        <div class="row">
+          <div class="col-xl-12">
+            <p class="copy_right text-center " style="color: #010101;">
+              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+              Copyright &copy;
+              <script>document.write(new Date().getFullYear());</script> All rights reserved </a>
+              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script type="text/javascript">
+    const map = L.map('map').setView([-6.596553, 106.803562], 14);
+    googleStreets = L.tileLayer('http://{s}.google.com/vt?lyrs=m&x={x}&y={y}&z={z}', {
+      maxZoom: 20,
+      subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
+    });
+    googleStreets.addTo(map);
+
+    //Custom Marker
+    var IconRS1 = L.icon({ iconUrl: 'RS1.png', iconSize: [70, 70] });
+    var IconRS2 = L.icon({ iconUrl: 'RS2.png', iconSize: [70, 70] });
+    var IconRS3 = L.icon({ iconUrl: 'RS3.png', iconSize: [70, 70] });
+    var IconRS4 = L.icon({ iconUrl: 'RS4.png', iconSize: [70, 70] });
+    var IconRS5 = L.icon({ iconUrl: 'RS5.png', iconSize: [70, 70] });
+    var IconRS6 = L.icon({ iconUrl: 'RS6.png', iconSize: [70, 70] });
+    var IconRS7 = L.icon({ iconUrl: 'RS7.png', iconSize: [70, 70] });
+    var IconRS8 = L.icon({ iconUrl: 'RS8.png', iconSize: [70, 70] });
+    var IconRS9 = L.icon({ iconUrl: 'RS9.png', iconSize: [70, 70] });
+    var IconRS10 = L.icon({ iconUrl: 'RS10.png', iconSize: [70, 70] });
+
+    //Marker Lokasi
+    //------------------------------------------------------
+    //1. Marker RSUD Kota Bogor
+    L.marker([-6.580607277128784, 106.77788214252242], { icon: IconRS1 }).addTo(map)
+      .bindPopup('<b>Rumah Sakit Unit Darurat Kota Bogor</b> <br>Jenis: Rumah Sakit Umum <br>Alamat: Jl. DR. Sumeru RT.03/RW.20 No.120 <br>Jam Buka: 24 Jam <br>No.Telp: 02518312292 <br><br><b>Fasilitas:</b><br>1. Instalasi Rawat Inap<br>2. Unit Perawatan Intensif<br>3. Instalasi Rawat Inap<br>4. Instalasi Gawat Darurat (IGD)<br>5. Medical Check Up ')
+
+    //2. Marker Rumah Sakit Vania
+    L.marker([-6.613103042250159, 106.80781498206724], { icon: IconRS2 }).addTo(map)
+      .bindPopup('<b>Rumah Sakit Vania</b> <br>Jenis: Rumah Sakit Umum <br>Alamat: Jl. Siliwangi RT.01/RW.03 No.11 Sukasari <br>Jam Buka: 24 Jam <br>No.Telp: 02518380601<br><br><b>Fasilitas:</b><br>1. Instalasi Rawat Inap<br>2. Instalasi Rawat Jalan<br>3. Instalasi Fisioterapi<br>4. Instalasi Gawat Darurat (IGD)<br>5. Medical Check Up ')
+
+    //3. Marker Rumah Sakit Ummi
+    L.marker([-6.608561679577814, 106.79463399235692], { icon: IconRS3 }).addTo(map)
+      .bindPopup('<b>Rumah Sakit Ummi</b> <br>Jenis: Rumah Sakit Umum <br>Alamat: Jl. Empang II No.2 Empang <br>Jam Buka: 24 Jam <br>No.Telp: 02518341600 <br><br><b>Fasilitas:</b><br>1. Paediatric Intensive Care Unit (PICU)<br>2. Neonate Intensive Care Unit (NICU)<br>3. Instalasi Rawat Inap<br>4. Instalasi Rawat Jalan<br>5. Instalasi Radiologi ')
+
+    //4. Marker Rumah Sakit Salak
+    L.marker([-6.5911577008461055, 106.79745062359372], { icon: IconRS4 }).addTo(map)
+      .bindPopup('<b>Rumah Sakit Salak</b> <br>Jenis: Rumah Sakit Umum <br>Alamat: Jl. Jend. Sudirman RT.03/RW.07 No.8 <br>Jam Buka: 24 Jam <br>No.Telp: 081281900808 <br><br><b>Fasilitas:</b><br>1. Unit Perawatan Intensif<br>2. Unit Gawat Darurat (UGD)<br>3. Instalasi Rawat Inap<br>4. Instalasi Rawat Jalan<br>5. Instalasi Laboratorium')
+
+    //5. Marker Rumah Sakit PMI
+    L.marker([-6.598660794575932, 106.80504809722622], { icon: IconRS5 }).addTo(map)
+      .bindPopup('<b>Rumah Sakit PMI</b> <br>Jenis: Rumah Sakit Umum <br>Alamat: Jl. Pajajaran No.80 <br>Jam Buka: 24 Jam <br>No.Telp: 02518393030 <br><br><b>Fasilitas:</b><br>1. Instalasi Tumbuh Kembang Anak<br>2. Instalasi Rawat Inap<br>3. Unit Perawatan Intensif<br>4. Instalasi Rawat Jalan<br>5. Instalasi Gawat Darurat (IGD)')
+
+    //6. Marker Rumah Sakit Mulia
+    L.marker([-6.575600223938331, 106.80749878314134], { icon: IconRS6 }).addTo(map)
+      .bindPopup('<b>Rumah Sakit Mulia</b> <br>Jenis: Rumah Sakit Umum <br>Alamat: Jl. Raya Pajajaran No.98 No.120 <br>Jam Buka: 24 Jam <br>No.Telp: 02517566220 <br><br><b>Fasilitas:</b><br>1. Farmasi<br>2. Instalasi Gigi<br>3. Instalasi Geriatri<br>4. Instalasi Bersalin<br>5. Instalasi Bedah')
+
+    //7. Marker Rumah Sakit Bogor Medical Center
+    L.marker([-6.607931861497123, 106.8110770873306], { icon: IconRS7 }).addTo(map)
+      .bindPopup('<b>Rumah Sakit Bogor Medical Center</b> <br>Jenis: Rumah Sakit Umum <br>Alamat: Jl. Pajajaran Indah V RT.01/RW.11 No.97<br>Jam Buka: 24 Jam <br>No.Telp: 02518307900 <br><br><b>Fasilitas:</b><br>1. Farmasi<br>2. Instalasi Bedah<br>3. Instalasi Rawat Inap<br>4. Instalasi Rawat Jalan<br>5. Unit Gawat Darurat (UGD)')
+
+    //8. Marker Rumah Sakit Melania
+    L.marker([-6.611278755436441, 106.80068991341412], { icon: IconRS8 }).addTo(map)
+      .bindPopup('<b>Rumah Sakit Melania</b> <br>Jenis: Rumah Sakit Umum <br>Alamat: Jl. Pahlawan RT.01/RW.16 No.91 <br>Jam Buka: 24 Jam <br>No.Telp: 02518321196 <br><br><b>Fasilitas:</b><br>1. Farmasi<br>2. Instalasi Laktasi<br>3. Instalasi Maternal Perinatal<br>4. Instalasi Tumbuh Kembang Anak<br>5. Instalasi Bersalin')
+
+    //9. Marker Rumah Sakit Azra
+    L.marker([-6.579497999561781, 106.80790025406881], { icon: IconRS9 }).addTo(map)
+      .bindPopup('<b>Rumah Sakit Azra</b> <br>Jenis: Rumah Sakit Umum <br>Alamat: Jl. Pajajaran RT.02/RW.11 No.219 <br>Jam Buka: 24 Jam <br>No.Telp: 02518318456 <br><br><b>Fasilitas:</b><br>1. Farmasi<br>2. Instalasi Rawat Inap<br>3. Instalasi Rawat Jalan<br>4. Instalasi Gigi<br>5. Instalasi Bedah')
+
+    //10. Marker Rumah Sakit Siloam
+    L.marker([-6.595668403741563, 106.8046978761431], { icon: IconRS10 }).addTo(map)
+      .bindPopup('<b>Rumah Sakit Siloam</b> <br>Jenis: Rumah Sakit Umum <br>Alamat: Jl. Pajajaran RT.03/RW.08 No.27 <br>Jam Buka: 24 Jam <br>No.Telp: 02518303900 <br><br><b>Fasilitas:</b><br>1. Instalasi Bedah<br>2. Instalasi Rawat Jalan<br>3. Instalasi Rawat Inap<br>4. Instalasi Radiologi<br>5. Instalasi Laboratorium')
+    //------------------------------------------------------
+
+    //Polygon Lokasi
+    //------------------------------------------------------
+    //1. Polygon RSUD Kota Bogor
+    var latlngs =
+      [[-6.578545653924761, 106.77877815894067],
+      [-6.578924613756616, 106.77712750510246],
+      [-6.580725843964652, 106.7775512941043],
+      [-6.580911165120989, 106.77795446717766],
+      [-6.580603378200587, 106.77929554244643],
+      [-6.578535692759814, 106.77877815894067]];
+    var polygon = L.polygon(latlngs, { color: 'green' }).addTo(map);
+
+    //2. Polygon Rumah Sakit Vania
+    var latlngs =
+      [[-6.612861, 106.807492],
+      [-6.612510, 106.808160],
+      [-6.612778, 106.808358],
+      [-6.613240, 106.807773]];
+    var polygon = L.polygon(latlngs, { color: 'green' }).addTo(map);
+
+    //3. Polygon Rumah Sakit Ummi
+    var latlngs =
+      [[-6.6085277883461115, 106.7945277277327],
+      [-6.608872731519461, 106.79451602265826],
+      [-6.608880483048671, 106.79468925776],
+      [-6.608593676386585, 106.79470096283444],
+      [-6.6085874751596085, 106.79468223471532],
+      [-6.6085339895738375, 106.79468457573023]];
+    var polygon = L.polygon(latlngs, { color: 'green' }).addTo(map);
+
+    //4. Polygon Rumah Sakit Salak
+    var latlngs =
+      [[-6.590627519925079, 106.79717304111685],
+      [-6.591605026360675, 106.7972110967583],
+      [-6.591548320238879, 106.79798580088814],
+      [-6.591199127823356, 106.79791910225165],
+      [-6.59105146632301, 106.79771397487768],
+      [-6.590992666066674, 106.79753157421746],
+      [-6.590767102629466, 106.79745460334006],
+      [-6.5907734744763316, 106.79731990430133],
+      [-6.590598885759004, 106.79730964151769]];
+    var polygon = L.polygon(latlngs, { color: 'green' }).addTo(map);
+
+    //5. Polygon Rumah Sakit PMI
+    var latlngs =
+      [[-6.598278066874897, 106.8047659592604],
+      [-6.5980483961811, 106.80598099991442],
+      [-6.597906684423294, 106.80600067668615],
+      [-6.597696560018121, 106.80708781832399],
+      [-6.598209654338951, 106.80725015169071],
+      [-6.59832693296622, 106.80690088899259],
+      [-6.598796047197632, 106.8069648385007],
+      [-6.59913322277702, 106.80491845424126]];
+    var polygon = L.polygon(latlngs, { color: 'green' }).addTo(map);
+
+    //6. Polygon Rumah Sakit Mulia
+    var latlngs =
+      [[-6.575864030211624, 106.80763041825742],
+      [-6.575707355704465, 106.8069900117433],
+      [-6.575831336861835, 106.80692644554884],
+      [-6.5757990489842335, 106.806761615502],
+      [-6.576126540216879, 106.80658517770539],
+      [-6.5761213623887524, 106.80653812691975],
+      [-6.575756615428308, 106.8065002604309],
+      [-6.5753246952163105, 106.80668212931488],
+      [-6.5753585713249345, 106.80692651562772],
+      [-6.5753246952163105, 106.80704018368019],
+      [-6.5754459585198735, 106.80774652395027]];
+    var polygon = L.polygon(latlngs, { color: 'green' }).addTo(map);
+
+    //7. Polygon Rumah Sakit Bogor Medical Center
+    var latlngs =
+      [[-6.607639072464458, 106.81092803429621],
+      [-6.607921543120392, 106.81061738934531],
+      [-6.608120934074502, 106.8108061658924],
+      [-6.6081684080993535, 106.81076315351457],
+      [-6.608417646655031, 106.81100689032219],
+      [-6.608325072349021, 106.81110964211365],
+      [-6.608353556752711, 106.8111454857618],
+      [-6.608090075955908, 106.81141311833487]];
+    var polygon = L.polygon(latlngs, { color: 'green' }).addTo(map);
+
+    //8. Polygon Rumah Sakit Melania
+    var latlngs =
+      [[-6.611320379090618, 106.80043422327354],
+      [-6.611523529038708, 106.80079474340404],
+      [-6.611239187442527, 106.80094187282958],
+      [-6.6109924333793275, 106.80063542822728]];
+    var polygon = L.polygon(latlngs, { color: 'green' }).addTo(map);
+
+    //9. Polygon Rumah Sakit Azra
+    var latlngs =
+      [[-6.578620375521195, 106.80734070631118],
+      [-6.5788424114586, 106.8087672110179],
+      [-6.579429777341538, 106.80855910802067],
+      [-6.579558927896377, 106.80799729292124],
+      [-6.579646824634712, 106.80798362420529],
+      [-6.579618525987794, 106.8071246536274]];
+    var polygon = L.polygon(latlngs, { color: 'green' }).addTo(map);
+
+    //10. Polygon Rumah Sakit Siloam
+    var latlngs =
+      [[-6.595524664082803, 106.80437310178088],
+      [-6.595947906899164, 106.80440619403586],
+      [-6.595397280245837, 106.80670196928713],
+      [-6.5950192377157855, 106.80663578477716]];
+    var polygon = L.polygon(latlngs, { color: 'green' }).addTo(map);
+    //------------------------------------------------------
+  </script>
+  <!-- JS here -->
+  <script src="../js/vendor/modernizr-3.5.0.min.js"></script>
+  <script src="../js/vendor/jquery-1.12.4.min.js"></script>
+  <script src="../js/popper.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/owl.carousel.min.js"></script>
+  <script src="../js/isotope.pkgd.min.js"></script>
+  <script src="../js/ajax-form.js"></script>
+  <script src="../js/waypoints.min.js"></script>
+  <script src="../js/jquery.counterup.min.js"></script>
+  <script src="../js/imagesloaded.pkgd.min.js"></script>
+  <script src="../js/scrollIt.js"></script>
+  <script src="../js/jquery.scrollUp.min.js"></script>
+  <script src="../js/wow.min.js"></script>
+  <script src="../js/nice-select.min.js"></script>
+  <script src="../js/jquery.slicknav.min.js"></script>
+  <script src="../js/jquery.magnific-popup.min.js"></script>
+  <script src="../js/plugins.js"></script>
+  <script src="../js/gijgo.min.js"></script>
+  <!--contact js-->
+  <script src="../js/contact.js"></script>
+  <script src="../js/jquery.ajaxchimp.min.js"></script>
+  <script src="../js/jquery.form.js"></script>
+  <script src="../js/jquery.validate.min.js"></script>
+  <script src="../js/mail-script.js"></script>
+
+  <script src="../js/main.js"></script>
+  <script>
+    $('#datepicker').datepicker({
+      iconsLibrary: 'fontawesome',
+      icons: {
+        rightIcon: '<span class="fa fa-caret-down"></span>'
+      }
+    });
+    $('#datepicker2').datepicker({
+      iconsLibrary: 'fontawesome',
+      icons: {
+        rightIcon: '<span class="fa fa-caret-down"></span>'
+      }
+
+    });
+    $(document).ready(function () {
+      $('.js-example-basic-multiple').select2();
+    });
+  </script>
+</body>
+
+</html>
